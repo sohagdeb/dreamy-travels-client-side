@@ -1,0 +1,29 @@
+.image{
+    width: 350px;
+    height: 300px;
+    margin-top: 20px;
+    transition: 0.8s;
+}
+.card-container{
+    background-color: white;
+    width: 25rem;
+    height: 40rem;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+}
+.button{
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: tomato;
+    color: white;
+    transition: 0.8s;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.card-container:hover .image{
+    transform: scale(1.1);
+    
+}
