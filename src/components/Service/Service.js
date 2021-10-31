@@ -7,6 +7,7 @@ import './Service.css';
 const Service = (props) => {
     const { _id, name, img, price, description } = props.service;
     const { handleCart } = props;
+    const { handleDelete } = props;
     return (
         <Col>
             <Card className='card-container mx-auto shadow p-3 mb-5 bg-body rounded'>
@@ -23,6 +24,8 @@ const Service = (props) => {
                     <Link to={`/carts`}>
                         <button onClick={() => handleCart(props.service)} className="button btn btn-warning">Booking {name.toLowerCase()}</button>
                     </Link>
+
+                    <button className="button btn btn-warning" onClick={() => handleDelete(_id)}>Delete</button>
                 </Card.Body>
             </Card>
         </Col>

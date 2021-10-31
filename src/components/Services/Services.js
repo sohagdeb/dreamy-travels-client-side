@@ -20,6 +20,23 @@ const Services = () => {
                 alert('Added Successfully');
             })
     }
+    const handleDelete = id => {
+        // console.log(id);
+        const url = `http://localhost:5000/services/${id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.deletedCount) {
+                    alert('Successfully deleted');
+                    const remaining = services.filter(service => service._id !== id);
+                    setServices(remaining);
+                }
+
+            })
+    }
     return (
         <div>
             <div>
@@ -33,6 +50,7 @@ const Services = () => {
                                 key={service._id}
                                 service={service}
                                 handleCart={handleCart}
+                                handleDelete={handleDelete}
                             ></Service>)
                         }
                     </Row>
